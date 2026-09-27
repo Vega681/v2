@@ -70,84 +70,50 @@
         <section id="microscopeArea" class="microscope-area hidden">
 
             <div class="viewer-header">
+
                 <div>
                     <h2>🔬 Interactive Microscope</h2>
-                    <p>Click any highlighted part of the microscope.</p>
+                    <p>Click any part of the microscope.</p>
                 </div>
 
-                <button class="reset-button" onclick="resetMicroscope()">
+                <button
+                    class="reset-button"
+                    onclick="resetMicroscope()"
+                >
                     ↻ Reset View
                 </button>
+
             </div>
 
 
             <div class="microscope-layout">
 
-                <!-- 3D-STYLE MICROSCOPE -->
+                <!-- NEW SVG MICROSCOPE -->
                 <div class="microscope-viewer">
 
                     <svg
                         id="microscopeSVG"
-                        viewBox="0 0 600 600"
+                        viewBox="0 0 159.6 241.87"
                         xmlns="http://www.w3.org/2000/svg"
                         aria-label="Interactive microscope"
                     >
 
-                        <!-- BACK SHADOW -->
-                        <ellipse
-                            cx="310"
-                            cy="540"
-                            rx="220"
-                            ry="30"
-                            class="shadow"
+                        <!-- YOUR NEW SVG -->
+                        <image
+                            href="microscope.svg"
+                            x="0"
+                            y="0"
+                            width="159.6"
+                            height="241.87"
+                            preserveAspectRatio="xMidYMid meet"
                         />
 
 
-                        <!-- ========================= -->
-                        <!-- ARM -->
-                        <!-- ========================= -->
+                        <!-- =========================
+                             INTERACTION AREAS
+                        ========================== -->
 
-                        <g
-                            class="microscope-part"
-                            data-part="arm"
-                            tabindex="0"
-                            role="button"
-                            aria-label="Microscope arm"
-                            onclick="selectPart('arm')"
-                            onkeydown="keyboardPart(event, 'arm')"
-                        >
-
-                            <path
-                                d="M340 110
-                                   C410 130 455 200 450 290
-                                   L430 390
-                                   C425 420 400 440 370 430
-                                   L330 415
-                                   C350 360 365 310 360 250
-                                   C355 195 325 165 300 150
-                                   Z"
-                                class="metal dark"
-                            />
-
-                            <path
-                                d="M350 125
-                                   C405 145 430 205 425 275
-                                   L410 365
-                                   C407 390 395 405 380 405
-                                   L365 398
-                                   C385 330 392 280 380 220
-                                   C370 175 345 150 320 140
-                                   Z"
-                                class="metal light"
-                            />
-
-                        </g>
-
-
-                        <!-- ========================= -->
-                        <!-- EYEPIECE -->
-                        <!-- ========================= -->
-
+                        <!-- Eyepiece -->
                         <g
                             class="microscope-part"
                             data-part="eyepiece"
@@ -157,73 +123,17 @@
                             onclick="selectPart('eyepiece')"
                             onkeydown="keyboardPart(event, 'eyepiece')"
                         >
-
                             <rect
-                                x="285"
-                                y="45"
-                                width="70"
-                                height="90"
-                                rx="15"
-                                class="metal dark"
+                                x="68"
+                                y="10"
+                                width="25"
+                                height="48"
+                                fill="transparent"
                             />
-
-                            <rect
-                                x="294"
-                                y="35"
-                                width="52"
-                                height="25"
-                                rx="8"
-                                class="metal black"
-                            />
-
-                            <ellipse
-                                cx="320"
-                                cy="45"
-                                rx="27"
-                                ry="8"
-                                class="metal light"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- NOSEPIECE -->
-                        <!-- ========================= -->
-
-                        <g
-                            class="microscope-part"
-                            data-part="nosepiece"
-                            tabindex="0"
-                            role="button"
-                            aria-label="Revolving nosepiece"
-                            onclick="selectPart('nosepiece')"
-                            onkeydown="keyboardPart(event, 'nosepiece')"
-                        >
-
-                            <path
-                                d="M280 125
-                                   L360 125
-                                   L390 175
-                                   L250 175
-                                   Z"
-                                class="metal dark"
-                            />
-
-                            <circle
-                                cx="320"
-                                cy="150"
-                                r="32"
-                                class="metal light"
-                            />
-
-                        </g>
-
-
-                        <!-- ========================= -->
-                        <!-- OBJECTIVE LENSES -->
-                        <!-- ========================= -->
-
+                        <!-- Objective Lenses -->
                         <g
                             class="microscope-part"
                             data-part="objectives"
@@ -233,32 +143,37 @@
                             onclick="selectPart('objectives')"
                             onkeydown="keyboardPart(event, 'objectives')"
                         >
-
-                            <!-- Objective 1 -->
-                            <path
-                                d="M270 165 L290 165 L280 225 L258 225 Z"
-                                class="lens"
+                            <rect
+                                x="60"
+                                y="48"
+                                width="42"
+                                height="48"
+                                fill="transparent"
                             />
-
-                            <!-- Objective 2 -->
-                            <path
-                                d="M305 165 L325 165 L330 235 L308 235 Z"
-                                class="lens"
-                            />
-
-                            <!-- Objective 3 -->
-                            <path
-                                d="M340 165 L360 165 L375 220 L353 225 Z"
-                                class="lens"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- STAGE -->
-                        <!-- ========================= -->
+                        <!-- Nosepiece -->
+                        <g
+                            class="microscope-part"
+                            data-part="nosepiece"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Revolving nosepiece"
+                            onclick="selectPart('nosepiece')"
+                            onkeydown="keyboardPart(event, 'nosepiece')"
+                        >
+                            <rect
+                                x="55"
+                                y="42"
+                                width="52"
+                                height="42"
+                                fill="transparent"
+                            />
+                        </g>
 
+
+                        <!-- Stage -->
                         <g
                             class="microscope-part"
                             data-part="stage"
@@ -268,42 +183,17 @@
                             onclick="selectPart('stage')"
                             onkeydown="keyboardPart(event, 'stage')"
                         >
-
                             <rect
-                                x="175"
-                                y="260"
-                                width="290"
-                                height="45"
-                                rx="10"
-                                class="metal dark"
+                                x="35"
+                                y="88"
+                                width="90"
+                                height="38"
+                                fill="transparent"
                             />
-
-                            <rect
-                                x="195"
-                                y="267"
-                                width="250"
-                                height="28"
-                                rx="6"
-                                class="stage-top"
-                            />
-
-                            <!-- Slide -->
-                            <rect
-                                x="260"
-                                y="275"
-                                width="120"
-                                height="12"
-                                rx="3"
-                                class="slide"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- STAGE CLIPS -->
-                        <!-- ========================= -->
-
+                        <!-- Stage Clips -->
                         <g
                             class="microscope-part"
                             data-part="clips"
@@ -313,24 +203,17 @@
                             onclick="selectPart('clips')"
                             onkeydown="keyboardPart(event, 'clips')"
                         >
-
-                            <path
-                                d="M245 265 L270 265 L275 282 L250 282 Z"
-                                class="clip"
+                            <rect
+                                x="48"
+                                y="88"
+                                width="65"
+                                height="22"
+                                fill="transparent"
                             />
-
-                            <path
-                                d="M370 265 L395 265 L390 282 L365 282 Z"
-                                class="clip"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- DIAPHRAGM -->
-                        <!-- ========================= -->
-
+                        <!-- Diaphragm -->
                         <g
                             class="microscope-part"
                             data-part="diaphragm"
@@ -340,30 +223,17 @@
                             onclick="selectPart('diaphragm')"
                             onkeydown="keyboardPart(event, 'diaphragm')"
                         >
-
-                            <ellipse
-                                cx="320"
-                                cy="320"
-                                rx="65"
-                                ry="20"
-                                class="metal dark"
+                            <rect
+                                x="52"
+                                y="118"
+                                width="58"
+                                height="32"
+                                fill="transparent"
                             />
-
-                            <ellipse
-                                cx="320"
-                                cy="320"
-                                rx="25"
-                                ry="8"
-                                class="opening"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- FOCUS KNOBS -->
-                        <!-- ========================= -->
-
+                        <!-- Coarse Adjustment Knob -->
                         <g
                             class="microscope-part"
                             data-part="coarse"
@@ -373,24 +243,17 @@
                             onclick="selectPart('coarse')"
                             onkeydown="keyboardPart(event, 'coarse')"
                         >
-
-                            <circle
-                                cx="425"
-                                cy="240"
-                                r="40"
-                                class="knob"
+                            <rect
+                                x="100"
+                                y="68"
+                                width="42"
+                                height="48"
+                                fill="transparent"
                             />
-
-                            <circle
-                                cx="425"
-                                cy="240"
-                                r="25"
-                                class="knob-inner"
-                            />
-
                         </g>
 
 
+                        <!-- Fine Adjustment Knob -->
                         <g
                             class="microscope-part"
                             data-part="fine"
@@ -400,28 +263,37 @@
                             onclick="selectPart('fine')"
                             onkeydown="keyboardPart(event, 'fine')"
                         >
-
-                            <circle
-                                cx="455"
-                                cy="310"
-                                r="25"
-                                class="knob"
+                            <rect
+                                x="108"
+                                y="103"
+                                width="35"
+                                height="42"
+                                fill="transparent"
                             />
-
-                            <circle
-                                cx="455"
-                                cy="310"
-                                r="13"
-                                class="knob-inner"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- LIGHT SOURCE -->
-                        <!-- ========================= -->
+                        <!-- Arm -->
+                        <g
+                            class="microscope-part"
+                            data-part="arm"
+                            tabindex="0"
+                            role="button"
+                            aria-label="Microscope arm"
+                            onclick="selectPart('arm')"
+                            onkeydown="keyboardPart(event, 'arm')"
+                        >
+                            <rect
+                                x="78"
+                                y="43"
+                                width="68"
+                                height="125"
+                                fill="transparent"
+                            />
+                        </g>
 
+
+                        <!-- Light Source -->
                         <g
                             class="microscope-part"
                             data-part="light"
@@ -431,29 +303,17 @@
                             onclick="selectPart('light')"
                             onkeydown="keyboardPart(event, 'light')"
                         >
-
-                            <ellipse
-                                cx="320"
-                                cy="365"
-                                rx="50"
-                                ry="25"
-                                class="light-source"
+                            <rect
+                                x="48"
+                                y="132"
+                                width="64"
+                                height="42"
+                                fill="transparent"
                             />
-
-                            <circle
-                                cx="320"
-                                cy="365"
-                                r="15"
-                                class="bulb"
-                            />
-
                         </g>
 
 
-                        <!-- ========================= -->
-                        <!-- BASE -->
-                        <!-- ========================= -->
-
+                        <!-- Base -->
                         <g
                             class="microscope-part"
                             data-part="base"
@@ -463,31 +323,13 @@
                             onclick="selectPart('base')"
                             onkeydown="keyboardPart(event, 'base')"
                         >
-
-                            <path
-                                d="M130 430
-                                   Q150 400 190 395
-                                   L450 395
-                                   Q490 400 510 430
-                                   L530 500
-                                   Q535 530 500 540
-                                   L140 540
-                                   Q105 530 110 500
-                                   Z"
-                                class="metal dark"
+                            <rect
+                                x="18"
+                                y="168"
+                                width="125"
+                                height="68"
+                                fill="transparent"
                             />
-
-                            <path
-                                d="M145 440
-                                   Q165 415 200 415
-                                   L440 415
-                                   Q475 420 490 440
-                                   L505 490
-                                   L135 490
-                                   Z"
-                                class="metal light"
-                            />
-
                         </g>
 
                     </svg>
@@ -499,7 +341,10 @@
 
                 <aside class="info-panel">
 
-                    <div class="info-icon" id="infoIcon">
+                    <div
+                        class="info-icon"
+                        id="infoIcon"
+                    >
                         🔬
                     </div>
 
@@ -537,7 +382,10 @@
 
 
         <!-- OTHER EQUIPMENT -->
-        <section id="equipmentInfo" class="equipment-info hidden">
+        <section
+            id="equipmentInfo"
+            class="equipment-info hidden"
+        >
 
             <button
                 class="back-button"
@@ -551,8 +399,11 @@
             <p id="equipmentDescription"></p>
 
             <div class="function-box">
+
                 <h3>⚙️ Function</h3>
+
                 <p id="equipmentFunction"></p>
+
             </div>
 
         </section>
